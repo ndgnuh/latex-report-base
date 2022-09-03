@@ -1,0 +1,32 @@
+\documentclass[fontsize=14pt,DIV=calc]{scrreport}
+\input{setup/typeset.tex}
+\input{setup/metrics.tex}
+\input{setup/references.tex}
+\input{setup/table.tex}
+\input{setup/technical-terms.tex}
+
+\title{titles}
+\author{authors}
+% \date{April 2022}
+
+\usepackage{lipsum}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+
+\chapter{Introduction}
+
+\section{Main content}
+\section{Section}
+\chapter{Chapter}
+\section{Section}
+\chapter{Conclusions}
+\addcontentsline{toc}{chapter}{Bibliography}
+\nocite{*}
+\printbibliography
+
+\end{document}

@@ -1,0 +1,41 @@
+\usepackage{microtype}
+\usepackage{ifluatex}
+
+\ifluatex
+    \usepackage{polyglossia}
+    \usepackage{fontspec}
+    \setdefaultlanguage{vietnamese}
+\else
+    \usepackage{mlmodern}
+    \usepackage[utf8]{vietnam}
+\fi
+
+% MATH
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+
+% Code
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\algnewcommand\BoolAnd{\textbf{and} }
+\algnewcommand\BoolOr{\textbf{or} }
+\makeatletter
+\def\ALG@name{Thuật toán}
+\makeatother
+% \def\algorithmname{Thuật toán}
+
+% Custom font 
+\newcommand{\SmallMath}{\fontsize{10px}{10px}\selectfont}
+\def\mod{\operatorname{mod}}
+
+% Table
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% SECTION FONT
+\addtokomafont{disposition}{\rmfamily}
+% \KOMAoption{chapterprefix}{true}
+\renewcommand{\chapapp}{Chương}

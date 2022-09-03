@@ -1,0 +1,45 @@
+\usepackage{pgfkeys}
+
+\directlua{
+    tex.module_translate = require("setup.moon.translate")
+}
+
+\newcommand{\providetranslation}[2]{%
+    \directlua{
+        tex.module_translate.provide_translation({key = "#1", value = "#2"})
+    }
+}
+\newcommand{\translate}[1]{
+    \directlua{tex.write(tex.module_translate.translate('#1'))}
+}
+\newcommand{\Translate}[1]{
+    \directlua{tex.write(tex.module_translate.translate_title('#1'))}
+}
+
+% \newcommand{\providetranslation}[2]{
+% 	\pgfkeys{
+% 		/translation/#1/.initial = {\texorpdfstring{#2}{#2}},
+% 		/translation/uppercase/#1/.initial = {\expandonce{\MakeUppercase #2#2}}
+% 	}
+% }
+
+% \let\GenerateWarning=\message
+% \newcommand{\WarnTranslate}[1]{#1\GenerateWarning{Untranslated word: #1}}
+% \newcommand{\translate}[1]{\pgfkeysvalueof{/translation/#1}}
+% \newcommand{\Translate}[1]{\pgfkeysvalueof{/translation/uppercase/#1}}
+
+\providetranslation{Overview}{tổng quan}
+\providetranslation{Design concepts}{khái niệm thiết kế}
+\providetranslation{design concepts}{khái niệm thiết kế}
+\providetranslation{Details}{chi tiết}
+\providetranslation{statevar}{biến trạng thái}
+\providetranslation{emergence}{đột phát}
+\providetranslation{purpose}{mục đích}
+\providetranslation{entity}{thực thể}
+\providetranslation{scale}{cấp độ}
+\providetranslation{process}{quá trình}
+\providetranslation{schedule}{lập lịch}
+\providetranslation{initialize}{trạng thái khởi tạo}
+\providetranslation{input data}{dữ liệu đầu vào}
+\providetranslation{submodel}{mô hình con}
+
